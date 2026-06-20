@@ -3,104 +3,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Império Suplementos</title>
+
+<title>Império Suplementos | Cordeiro RJ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#111;
-    color:white;
+background:#0d0d0d;
+color:white;
+overflow-x:hidden;
+}
+
+:root{
+--gold:#d4af37;
+--gold-light:#ffd700;
+--dark:#111111;
+--card:#1b1b1b;
 }
 
 header{
-    text-align:center;
-    padding:30px;
-    background:#000;
+background:
+linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.95));
+padding:40px 20px 60px;
+text-align:center;
+border-bottom:1px solid rgba(212,175,55,.25);
 }
 
 .logo{
-    width:200px;
-    border-radius:15px;
+width:180px;
+max-width:90%;
+margin-bottom:20px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(212,175,55,.25);
 }
 
-h1{
-    color:#FFD700;
+.hero-title{
+font-size:3rem;
+font-weight:800;
+color:var(--gold-light);
+margin-bottom:10px;
 }
 
-.produtos{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    padding:20px;
+.hero-subtitle{
+font-size:1.1rem;
+max-width:700px;
+margin:auto;
+color:#ddd;
+line-height:1.7;
 }
 
-.card{
-    background:#1d1d1d;
-    width:250px;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
+.info-bar{
+margin-top:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
 }
 
-.preco{
-    color:#00ff88;
-    font-size:22px;
-    font-weight:bold;
+.info-item{
+background:rgba(255,255,255,.05);
+padding:12px 18px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.cta{
+margin-top:35px;
+}
+
+.whatsapp-btn{
+display:inline-block;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:16px 35px;
+border-radius:50px;
+font-size:18px;
+font-weight:700;
+transition:.3s;
+}
+
+.whatsapp-btn:hover{
+transform:translateY(-3px);
+}
+
+.section-title{
+text-align:center;
+font-size:2.2rem;
+color:var(--gold-light);
+margin:60px 0 30px;
+}
+
+.products{
+padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.product{
+background:var(--card);
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
+border:1px solid rgba(212,175,55,.15);
+}
+
+.product:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.product img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.product-content{
+padding:20px;
+text-align:center;
+}
+
+.product h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:1.8rem;
+font-weight:800;
+color:#00ff88;
+margin:10px 0;
+}
+
+.buy-btn{
+display:inline-block;
+background:var(--gold);
+color:black;
+font-weight:700;
+padding:12px 24px;
+border-radius:30px;
+text-decoration:none;
+margin-top:10px;
+}
+
+.benefits{
+max-width:1200px;
+margin:80px auto;
+padding:0 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.benefit{
+background:var(--card);
+padding:30px;
+border-radius:18px;
+text-align:center;
+}
+
+.benefit h4{
+color:var(--gold-light);
+margin-bottom:10px;
+}
+
+.instagram{
+text-align:center;
+padding:70px 20px;
+background:#151515;
+}
+
+.instagram a{
+color:var(--gold-light);
+font-size:1.2rem;
+text-decoration:none;
+font-weight:700;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
+padding:40px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
 }
+
+.footer-logo{
+font-size:1.5rem;
+font-weight:800;
+color:var(--gold-light);
+margin-bottom:10px;
+}
+
+.floating-whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
+z-index:999;
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:2rem;
+}
+
+.hero-subtitle{
+font-size:1rem;
+}
+
+.logo{
+width:140px;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
 <header>
-    <img src="logo.jpg" class="logo">
-    <h1>IMPÉRIO SUPLEMENTOS</h1>
 
-    <p>📍 Cordeiro - RJ</p>
-    <p>🚚 Delivery grátis para Cordeiro e Cantagalo</p>
-    <p>🕗 Segunda a sábado • 08h às 22h</p>
-    <p>💳 Pix | Cartão | Dinheiro | Voucher</p>
+<img src="logo.jpg" alt="Império Suplementos" class="logo">
+
+<h1 class="hero-title">IMPÉRIO SUPLEMENTOS</h1>
+
+<p class="hero-subtitle">
+Os melhores suplementos de Cordeiro e região.
+Produtos originais, atendimento de qualidade e entrega rápida.
+</p>
+
+<div class="info-bar">
+
+<div class="info-item">📍 Cordeiro - RJ</div>
+
+<div class="info-item">🚚 Delivery grátis para Cordeiro e Cantagalo</div>
+
+<div class="info-item">🕗 Seg a Sáb • 08h às 22h</div>
+
+<div class="info-item">💳 Pix • Cartão • Dinheiro • Voucher</div>
+
+</div>
+
+<div class="cta">
+<a class="whatsapp-btn" href="https://wa.me/5522981223789" target="_blank">
+📲 Comprar pelo WhatsApp
+</a>
+</div>
+
 </header>
 
-<section class="produtos">
+<h2 class="section-title">Produtos em Destaque</h2>
 
-<div class="card">
-<h2>Creatina Integralmedica</h2>
-<p class="preco">R$ 109,90</p>
+<section class="products">
+
+<div class="product">
+
+<img src="creatina.jpg" alt="Creatina">
+
+<div class="product-content">
+
+<h3>Creatina Under Labz 300g</h3>
+
+<div class="price">R$ 109,90</div>
+
+<a class="buy-btn"
+href="https://wa.me/5522981223789?text=Olá%20quero%20a%20Creatina%20Under%20Labz">
+Comprar
+</a>
+
 </div>
 
-<div class="card">
-<h2>Protein Crush</h2>
-<p class="preco">R$ 139,90</p>
 </div>
 
-<div class="card">
-<h2>Warzone 300g</h2>
-<p class="preco">R$ 129,90</p>
+<div class="product">
+<div class="product-content">
+<h3>Protein Crush</h3>
+<div class="price">R$ 139,90</div>
+<a class="buy-btn"
+href="https://wa.me/5522981223789">
+Consultar
+</a>
+</div>
 </div>
 
-<div class="card">
-<h2>Testo Cycle</h2>
-<p class="preco">R$ 99,90</p>
+<div class="product">
+<div class="product-content">
+<h3>Warzone 300g</h3>
+<div class="price">R$ 129,90</div>
+<a class="buy-btn"
+href="https://wa.me/5522981223789">
+Consultar
+</a>
+</div>
 </div>
 
-<div class="card">
-<h2>Dr. Peanut</h2>
-<p class="preco">R$ 79,90</p>
+<div class="product">
+<div class="product-content">
+<h3>Testo Cycle</h3>
+<div class="price">R$ 99,90</div>
+<a class="buy-btn"
+href="https://wa.me/5522981223789">
+Consultar
+</a>
+</div>
+</div>
+
+<div class="product">
+<div class="product-content">
+<h3>Dr. Peanut</h3>
+<div class="price">R$ 79,90</div>
+<a class="buy-btn"
+href="https://wa.me/5522981223789">
+Consultar
+</a>
+</div>
 </div>
 
 </section>
 
+<h2 class="section-title">Por que comprar conosco?</h2>
+
+<section class="benefits">
+
+<div class="benefit">
+<h4>✅ Produtos Originais</h4>
+<p>Trabalhamos apenas com marcas confiáveis.</p>
+</div>
+
+<div class="benefit">
+<h4>🚚 Entrega Rápida</h4>
+<p>Delivery grátis para Cordeiro e Cantagalo.</p>
+</div>
+
+<div class="benefit">
+<h4>💪 Performance</h4>
+<p>Os melhores suplementos para seus resultados.</p>
+</div>
+
+<div class="benefit">
+<h4>⭐ Atendimento Premium</h4>
+<p>Segunda a sábado até às 22h.</p>
+</div>
+
+</section>
+
+<section class="instagram">
+
+<h2 class="section-title">Siga no Instagram</h2>
+
+<a href="https://instagram.com/_imperio.suplementos_" target="_blank">
+@_imperio.suplementos_
+</a>
+
+</section>
+
 <footer>
-<p>© Império Suplementos</p>
+
+<div class="footer-logo">
+IMPÉRIO SUPLEMENTOS
+</div>
+
+<p>Cordeiro - RJ</p>
+
+<p>WhatsApp: (22) 98122-3789</p>
+
+<p>© 2026 Império Suplementos</p>
+
 </footer>
+
+<a class="floating-whatsapp"
+href="https://wa.me/5522981223789"
+target="_blank">
+💬
+</a>
 
 </body>
 </html>
